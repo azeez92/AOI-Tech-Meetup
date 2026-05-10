@@ -1,0 +1,98 @@
+.navbar-collapse {
+    flex-grow: 0;
+   
+}
+
+
+.carousel img{
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: 70%;
+}
+
+
+
+.carousel-caption {
+    
+    bottom: 30%;
+}
+
+.carousel-caption h3{
+  font-size: 3rem;
+  font-weight: 800;
+
+}
+
+
+.carousel-caption p{
+  font-size: 1.2rem;
+
+}
+
+
+.carousel-item .overlay{
+  background-color: rgba(0, 0, 0, 0.374);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+
+}
+
+
+
+.about ul{
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding-left: 0;
+}
+
+
+.about li{
+  background-color: rgba(255, 217, 0, 0.616);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+
+}
+
+
+.about li:nth-child(even){
+  background-color: rgba(10, 14, 240, 0.616);
+  color: white;
+  
+  
+}
+
+
+.about li:hover{
+ transform: translateY(-13px);
+
+}
+
+
+.sub-about{
+  display: flex;
+  margin-top: 20px;
+}
+
+
+.sub-about .col{
+  height: 50px;
+  background-color: rgba(10, 14, 240, 0.616);
+}
+
+.sub-about .col:nth-child(even){
+
+  background-color:rgba(255, 217, 0, 0.733);
+}
+
+
+
