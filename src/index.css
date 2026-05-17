@@ -85,7 +85,7 @@
 
 
 .sub-about .col{
-  height: 50px;
+  height: 10px;
   background-color: rgba(10, 14, 240, 0.616);
 }
 
@@ -95,4 +95,180 @@
 }
 
 
+.speaker-heading{
+margin-top: 4rem;
+}
 
+
+.speaker-heading h2{
+  text-align: center;
+  font-size: 2rem;
+  color:#060994;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+
+.speaker-heading p{
+  text-align: center;
+  font-size: 1.2rem;
+  color: #000
+}
+
+
+
+.speaker-container {
+  display: flex;
+  height: 400px;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.speaker-card {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.speaker-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.speaker-container h4{
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 0px 3px 2px rgba(0, 0, 0, 0.433);
+}
+
+/* Active expands */
+.speaker-card.active {
+  flex: 3;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(to top, rgba(16, 16, 171, 0.7), transparent);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* Show overlay only when active */
+.speaker-card.active .overlay {
+  opacity: 1;
+}
+
+
+
+
+/* Gallery */
+
+.gallery-section {
+  padding: 40px;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  margin-bottom: 10px;
+}
+
+.masonry {
+  column-count: 3;
+  column-gap: 15px;
+  margin-top: 20px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 15px;
+}
+
+.masonry-item img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.masonry-item img:hover {
+  transform: scale(1.03);
+}
+
+/* Lightbox container */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Image */
+.lightbox img {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 10px;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  transform: translateY(-50%);
+  padding: 10px;
+}
+
+.arrow.left {
+  left: 20px;
+}
+
+.arrow.right {
+  right: 20px;
+}
+
+/* Hover effect */
+.arrow:hover,
+.close:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 992px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .masonry {
+    column-count: 1;
+  }
+}

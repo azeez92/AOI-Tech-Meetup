@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Row } from 'react-bootstrap'
 import azeez from "../assets/speakers/azeez.jpeg"
 import modesta from "../assets/speakers/modesta.jpeg"
@@ -6,34 +6,35 @@ import ganiyu from "../assets/speakers/ganiyu.jpeg"
 import gbadamosi from "../assets/speakers/gbadamosi.jpeg"
 import amina from "../assets/speakers/aminat.jpeg"
 
+
 const speakers =[
 {
 id: 1,
 name: "Azeez Sodiq",
-Role: "Full stact Software Developer",
+role: "Full stact Software Developer",
 image: azeez
 },
 {
-id: 1,
+id: 2,
 name: "Modesta Uzo",
-Role: "Data and Business Analyst",
+role: "Data and Business Analyst",
 image: modesta
 },
 {
-id: 1,
-name: "AbdulGaniyu Olanrewaju",
-Role: "Mobile Developer and Frontend Web Developer",
+id: 3,
+name: "AbdulGaniyu Olagunju",
+role: "Mobile Developer and Frontend Web Developer",
 image: ganiyu
 },
 
 {
-id: 1,
+id: 4,
 name: "Aminat Ajao",
-Role: "Cyber Security Analyst",
+role: "Cyber Security Analyst",
 image: amina
 },
 {
-id: 1,
+id: 5,
 name: "Gbadamosi Oluwadamilola",
 role: "Cybersecurity Specialist",
 image: gbadamosi
@@ -44,35 +45,45 @@ image: gbadamosi
 
 
 
+
 const Speakers = () => {
+const [activeId, setActiveId] = useState(1);
+
+
+
   return (
     <Container>
-<div>
+<div className='speaker-heading'>
   <h2>Featured Speakers</h2>
   <p>Learn From experienced Professionals shaping the tech industry</p>
 </div>
 
 
-<Row>
-  {speakers.map((speaker) =>(
-    <div key={speaker.id} className='col-12 col-md-6 col-lg-4'>
-      <div>
-        <img src={speaker.image} alt="" />
-        <div>
-        <h5>{speaker.name}</h5>
-        <p>{speaker.role}</p>
+<div className="speaker-container">
+      {speakers.map((speaker) => {
+        const isActive = speaker.id === activeId;
 
-        </div>
+        return (
+          <div
+            key={speaker.id}
+            className={`speaker-card ${isActive ? "active" : ""}`}
+            onClick={() => setActiveId(speaker.id)}
+          >
+            <img src={speaker.image} alt={speaker.name} />
 
-
-
-      </div>
+            {/* Overlay */}
+            <div className="overlay">
+              {isActive && (
+                <>
+                  <h4>{speaker.name}</h4>
+                  <p>{speaker.role}</p>
+                </>
+              )}
+            </div>
+          </div>
+        );
+      })}
     </div>
-  ))
-
-  }
-</Row>
-
 
     </Container>
   )

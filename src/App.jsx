@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import PastEvent from "./components/PastEvents";
 import Register from "./components/Register";
 import Speakers from "./components/Speakers";
 import TheOrganizer from "./components/TheOrganizer";
@@ -14,12 +15,14 @@ function App(){
   return(
     
     
-   <>
+ <>
       <Header />
       <Hero />
       <About />
+      <PastEvent />
       <TheOrganizer />
       <Speakers />
+  
       <Gallery />
       <Register />
       <Footer />
